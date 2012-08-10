@@ -2,6 +2,11 @@ events = (app) ->
 
   io = require('socket.io').listen(app)
 
+  # For Heroku compatability
+  io.configure ->
+    io.set("transports", ["xhr-polling"])
+    io.set("polling duration", 10)
+
   io.sockets.on 'connection', (socket) ->
 
     socket.on 'is-user', (username) ->
