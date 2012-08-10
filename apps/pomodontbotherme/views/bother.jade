@@ -1,0 +1,12 @@
+script
+  var socket = io.connect('http://localhost');
+
+  socket.on('connect', function() {
+    socket.emit('watch-user', 'caleb');
+  });
+
+  socket.on('tick', function(data) {
+    $('.timer').html(data);
+  });
+
+h1(class='timer') 0

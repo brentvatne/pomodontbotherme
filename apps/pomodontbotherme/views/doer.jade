@@ -1,0 +1,44 @@
+input(type='text', class='timer') hi
+input(type='submit', class='timer-start-button', value='hello')
+
+script
+  var socket = io.connect('http://localhost');
+
+  socket.on('connect', function() {
+    socket.emit('is-user', 'caleb');
+  });
+
+  socket.on('new-connection', function(data) {
+    console.log(data);
+  })
+
+  socket.on('disruption', function() {
+    // play 'question' audio
+  });
+
+  $(function() {
+
+    $('.timer-start-button').on('click', function() {
+      var numMinutes = parseInt($('.timer').val()),
+          numSeconds = numMinutes * 60;
+
+      $('.timer').val(numSeconds);
+      setTimeout(decrementCounterUntilZero, 1000);
+    });
+
+    var decrementCounterUntilZero = function() {
+      // subtract one from value in timer
+      var currentTime = parseInt($('.timer').val()),
+          newTime     = currentTime - 1;
+
+      // update the value
+      $('.timer').val(newTime);
+
+      // emit tick
+      socket.emit('tick', newTime);
+
+      if (newTime > 0) {
+        setTimeout(decrementCounterUntilZero, 1000);
+      }
+    };
+  });
