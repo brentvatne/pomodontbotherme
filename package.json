@@ -4,7 +4,7 @@
   "private": true,
   "engines": {
 	"node": "0.6.18",
-	"npm":  "1.1.23"
+	"npm":  "1.1.32"
   },
   "dependencies": {
     "express": "2.5.8",
