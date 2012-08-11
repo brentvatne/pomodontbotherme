@@ -8,7 +8,7 @@
   });
 
   socket.on('tick', function(data) {
-    return $('.timer').html(data);
+    return $('.time-remaining').html(data);
   });
 
 }).call(this);

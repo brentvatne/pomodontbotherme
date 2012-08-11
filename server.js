@@ -35,10 +35,10 @@ app.configure('production', function(){
 });
 
 // Routes
-require('./app/routes')(app)
+require('./app/routes')(app);
 
 // Socket IO
-require('./app/events')(app)
+require('./app/events')(app);
 
 app.listen(app.settings.port, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

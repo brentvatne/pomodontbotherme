@@ -28,4 +28,4 @@ events = (app) ->
 
       socket.broadcast.to(username).emit('new-connection', 'sup')
 
-module.exorts = events
+module.exports = events

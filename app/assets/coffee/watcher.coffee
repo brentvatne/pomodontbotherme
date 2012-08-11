@@ -4,4 +4,4 @@ socket.on 'connect', ->
   socket.emit 'is-watching', 'caleb'
 
 socket.on 'tick', (data) ->
-  $('.timer').html(data)
+  $('.time-remaining').html(data)
