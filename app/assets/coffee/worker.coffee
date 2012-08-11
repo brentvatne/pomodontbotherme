@@ -10,12 +10,13 @@ socket.on 'disruption', ->
   # play 'question' audio
 
 $ ->
-  $('.timer-start-button').on 'click', ->
+  $('.new-timer').on 'submit', ->
     minutes = parseFloat($('.timer').val())
     seconds = minutes * 60
 
     Pomodoro.duration = Pomodoro.remaining = seconds
     decrementCounterUntilZero()
+    false
 
   decrementCounterUntilZero = ->
     # Update the remaining time

@@ -13,12 +13,13 @@
 
   $(function() {
     var decrementCounterUntilZero, secondsToHumanizedTime, timeString;
-    $('.timer-start-button').on('click', function() {
+    $('.new-timer').on('submit', function() {
       var minutes, seconds;
       minutes = parseFloat($('.timer').val());
       seconds = minutes * 60;
       Pomodoro.duration = Pomodoro.remaining = seconds;
-      return decrementCounterUntilZero();
+      decrementCounterUntilZero();
+      return false;
     });
     decrementCounterUntilZero = function() {
       var readableRemainingTime;
