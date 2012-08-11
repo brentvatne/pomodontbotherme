@@ -13,7 +13,6 @@ Also maybe:
 
 Next things to do:
 
-- Multiple users. Right now only Caleb can use this.
 - UI design.
 - Pause and stop timer.
 
