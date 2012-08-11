@@ -4,12 +4,10 @@
   socket = io.connect('/');
 
   socket.on('connect', function() {
-    return socket.emit('is-worker', 'caleb');
+    return socket.emit('is-worker', Pomodoro.worker);
   });
 
-  socket.on('new-connection', function(data) {
-    return console.log(data);
-  });
+  socket.on('new-connection', function(data) {});
 
   socket.on('disruption', function() {});
 
@@ -63,7 +61,7 @@
     };
   });
 
-  window.Pomodoro = {};
+  window.Pomodoro || (window.Pomodoro = {});
 
   this.Pomodoro = window.Pomodoro;
 

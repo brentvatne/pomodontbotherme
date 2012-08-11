@@ -5,4 +5,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/zepto.min.js')
     script(src='/socket.io/socket.io.js')
+    script
+      window.Pomodoro = window.Pomodoro || {};
+      Pomodoro.worker = "#{user}";
   body!= body

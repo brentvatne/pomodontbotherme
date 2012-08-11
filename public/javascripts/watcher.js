@@ -4,7 +4,7 @@
   socket = io.connect('/');
 
   socket.on('connect', function() {
-    return socket.emit('is-watching', 'caleb');
+    return socket.emit('is-watching', Pomodoro.worker);
   });
 
   socket.on('tick', function(data) {

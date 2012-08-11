@@ -1,10 +1,10 @@
 socket = io.connect('/')
 
 socket.on 'connect', ->
-  socket.emit('is-worker', 'caleb')
+  socket.emit('is-worker', Pomodoro.worker)
 
 socket.on 'new-connection', (data) ->
-  console.log(data)
+  # new connection notification?
 
 socket.on 'disruption', ->
   # play 'question' audio
@@ -53,6 +53,5 @@ $ ->
 
     "#{minutesString}:#{secondsString}"
 
-window.Pomodoro = {}
+window.Pomodoro ||= {}
 @Pomodoro = window.Pomodoro
-

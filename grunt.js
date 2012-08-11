@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: '<config:coffee.src>',
+      files: '<config:coffee.app.src>',
       tasks: 'coffee'
     }
   });
