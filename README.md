@@ -19,7 +19,16 @@ Next things to do:
 
 ### Setup
 
-Just install the packaged dependencies with `npm install`
+#### Unpackaged Dependencies
+
+```
+node  ~> v0.8.6   # brew update node
+npm   ~> v1.1.46  # npm update npm -g
+grunt ~> 0.3.8    # npm install -g grunt
+```
+
+Once you have all of the unpackaged dependencies, run `npm install` from
+the project root.
 
 ### Development
 
@@ -50,12 +59,4 @@ Append the test file name to `bin/test` and then run `npm test`.
 ```
 git push heroku master
 heroku ps:scale web=1
-```
-
-### Unpackaged Dependencies
-
-```
-node  ~> v0.8.6   # brew update node
-npm   ~> v1.1.46  # npm update npm -g
-grunt ~> 0.3.8    # npm install -g grunt
 ```
