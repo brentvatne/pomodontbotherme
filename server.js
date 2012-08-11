@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -36,12 +35,10 @@ app.configure('production', function(){
 });
 
 // Routes
+require('./app/routes')(app)
 
-require('./apps/pomodontbotherme/routes')(app)
-
-// IO
-
-require('./apps/io/events')(app)
+// Socket IO
+require('./app/events')(app)
 
 app.listen(app.settings.port, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

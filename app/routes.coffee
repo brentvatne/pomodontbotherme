@@ -1,11 +1,11 @@
 routes = (app) ->
 
-  app.get '/caleb/bother', (req, res) ->
-    res.render "#{__dirname}/views/bother",
+  app.get '/caleb/watch', (req, res) ->
+    res.render "#{__dirname}/views/watcher",
       title: 'caleb stalker'
 
   app.get '/caleb', (req, res) ->
-    res.render "#{__dirname}/views/doer",
+    res.render "#{__dirname}/views/worker",
       title: 'you are caleb'
 
   app.get '/', (req, res) ->
